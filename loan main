@@ -1,0 +1,32 @@
+package Q2;
+
+
+import java.util.Scanner;
+
+public class LoanMain {
+    public static void main(String[] args) {
+        Loan l = new Loan();
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Loan Type");
+        l.setLoanType(sc.nextLine());
+        System.out.println("Enter Loan Status");
+        l.setLoanStatus(sc.nextLine());
+        System.out.println("Enter Loan Amount");
+        l.setLoanAmount(sc.nextDouble());
+        System.out.println("Enter Loan Tenure");
+        l.setTenure(sc.nextDouble());
+        System.out.println("Enter Rate of Interest");
+        l.setRoi(sc.nextDouble());
+        System.out.println("Enter Repayment Frequency");
+        l.setRepaymentFrequncy(sc.nextDouble());
+
+        sc.close();
+
+        l.calculateEMI();
+        l.date();
+
+    }
+
+
+}
