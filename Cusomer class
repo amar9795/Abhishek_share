@@ -1,0 +1,118 @@
+package Q1;
+
+public class Customer {
+    private  String customerName;
+    private  String date;
+    private  String contactNumber;
+    private String emailAddress;
+    private double monthlyIncome;
+    private String profession;
+    private double totalMonthlyExpenses;
+    private String designation;
+    private String componyName;
+    private double DBR;
+    private double MEE; //Max Eligible EMI
+
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getContactNumber() {
+        return contactNumber;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    public double getMonthlyIncome() {
+        return monthlyIncome;
+    }
+
+    public void setMonthlyIncome(double monthlyIncome) {
+        this.monthlyIncome = monthlyIncome;
+    }
+
+    public String getProfession() {
+        return profession;
+    }
+
+    public void setProfession(String profession) {
+        this.profession = profession;
+    }
+
+    public double getTotalMonthlyExpenses() {
+        return totalMonthlyExpenses;
+    }
+
+    public void setTotalMonthlyExpenses(double totalMonthlyExpenses) {
+        this.totalMonthlyExpenses = totalMonthlyExpenses;
+    }
+
+    public String getDesignation() {
+        return designation;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+
+    public void setComponyName(String componyName) {
+        this.componyName = componyName;
+    }
+    public String getComponyName(String s) {
+        return componyName;
+    }
+
+
+
+    public double getDBR() {
+        return DBR;
+    }
+
+    public void setDBR(double DBR) {
+        this.DBR = DBR;
+    }
+
+    public double getMEE() {
+        return MEE;
+    }
+
+    public void setMEE(double MEE) {
+        this.MEE = MEE;
+    }
+
+    void DBR(){
+        DBR = (totalMonthlyExpenses/monthlyIncome)*100;
+        System.out.println("DBR is:" + DBR);
+    }
+
+    void MEE(){
+        MEE = (monthlyIncome-totalMonthlyExpenses)/2;
+        System.out.println("MEE is:" + MEE);
+
+    }
+
+
+}
