@@ -1,0 +1,116 @@
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Loan {
+    private int loanId;
+    private String loanType;
+    private String loanStatus;
+    private double loanAmount;
+    private double tenure;
+    private double roi;
+    private double emiPerMonth;
+    private double maxeligibleEMI;
+    private double repaymentFrequncy;
+
+
+    public int getLoanId() {
+        return loanId;
+    }
+
+    public void setLoanId(int loanId) {
+        this.loanId = loanId;
+    }
+
+    public String getLoanType() {
+        return loanType;
+    }
+
+    public void setLoanType(String loanType) {
+        this.loanType = loanType;
+    }
+
+    public double getLoanAmount() {
+        return loanAmount;
+    }
+
+    public void setLoanAmount(double loanAmount) {
+        this.loanAmount = loanAmount;
+    }
+
+    public double getTenure() {
+        return tenure;
+    }
+
+    public void setTenure(double tenure) {
+        this.tenure = tenure;
+    }
+
+    public double getRoi() {
+        return roi;
+    }
+
+    public void setRoi(double roi) {
+        this.roi = roi;
+    }
+
+    public String getLoanStatus() {
+        return loanStatus;
+    }
+
+    public void setLoanStatus(String loanStatus) {
+        this.loanStatus = loanStatus;
+    }
+
+    public double getEmiPerMonth() {
+        return emiPerMonth;
+    }
+
+    public void setEmiPerMonth(double emiPerMonth) {
+        this.emiPerMonth = emiPerMonth;
+    }
+
+    public double getMaxeligibleEMI() {
+        return maxeligibleEMI;
+    }
+
+    public void setMaxeligibleEMI(double maxeligibleEMI) {
+        this.maxeligibleEMI = maxeligibleEMI;
+    }
+
+    public double getRepaymentFrequncy() {
+        return repaymentFrequncy;
+    }
+
+    public void setRepaymentFrequncy(double repaymentFrequncy) {
+        this.repaymentFrequncy = repaymentFrequncy;
+    }
+
+    void calculateEMI(){
+        double finalRoi = roi*0.01;
+       // System.out.println(finalRoi);
+        double roiandNoOfPayment = finalRoi/repaymentFrequncy;
+
+        double n= tenure*repaymentFrequncy;
+        double power = Math.pow((1+roiandNoOfPayment),n);
+
+
+        emiPerMonth = loanAmount*(finalRoi/repaymentFrequncy) /(1-1/power);
+
+        System.out.println(emiPerMonth);
+    }
+
+    void date(){
+        DateFormat df = new SimpleDateFormat("dd/MM/yy");
+        Date dateobj = new Date();
+        System.out.println(df.format(dateobj));
+    }
+
+    void generateRepaymentSchedule(){
+
+
+        }
+}
+
+
