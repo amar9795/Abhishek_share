@@ -1,0 +1,105 @@
+package Q6Ass1;
+
+public class Components {
+
+    private double installment;
+    //private double loanAmount;
+    private double roi;
+    private double noOfPayment;
+    private double tenure;
+    private double installmentNo;
+    private double openingBalance;
+    private double interestComponent;
+    private double principalComponent = 0.0;
+
+    public double Installment() {
+        return installment;
+    }
+
+    public void Installment(double installment) {
+        this.installment = installment;
+    }
+
+    /*public double getLoanAmount() {
+        return loanAmount;
+    }
+
+    public void setLoanAmount(double loanAmount) {
+        this.loanAmount = loanAmount;
+    }
+*/
+    public double getRoi() {
+        return roi;
+    }
+
+    public void setRoi(double roi) {
+        this.roi = roi;
+    }
+
+    public double getNoOfPayment() {
+        return noOfPayment;
+    }
+
+    public void setNoOfPayment(double noOfPayment) {
+        this.noOfPayment = noOfPayment;
+    }
+
+    public double getTenure() {
+        return tenure;
+    }
+
+    public void setTenure(double tenure) {
+        this.tenure = tenure;
+    }
+
+    public double getInstallmentNo() {
+        return installmentNo;
+    }
+
+    public void setInstallmentNo(double installmentNo) {
+        this.installmentNo = installmentNo;
+    }
+
+    public double getOpeningBalance() {
+        return openingBalance;
+    }
+
+    public void setOpeningBalance(double openingBalance) {
+        this.openingBalance = openingBalance;
+    }
+
+    public double getInterestComponent() {
+        return interestComponent;
+    }
+
+    public void setInterestComponent(double interestComponent) {
+        this.interestComponent = interestComponent;
+    }
+
+    public double getPrincipalComponent() {
+        return principalComponent;
+    }
+
+    public void setPrincipalComponent(double principalComponent) {
+        this.principalComponent = principalComponent;
+    }
+
+    void repaymentPlan(){
+
+        double finalroi = roi*0.01;
+        double roiandNoOfPayment = finalroi/noOfPayment;
+        double n= tenure*noOfPayment;
+        double power = Math.pow((1+roiandNoOfPayment),n);
+        installment = openingBalance*(finalroi/noOfPayment) /(1-1/power);
+        System.out.println(installment);
+
+        for(int i=0; i<=n; i++){
+            openingBalance = openingBalance-principalComponent;
+            interestComponent= openingBalance*(finalroi/12);
+            principalComponent = installment-interestComponent;
+            System.out.println("Installment No:" + "  " +  i + "  " + "  "+ "Principal Component:" +"  "+ principalComponent +"  "+ "IntersetComponent:" +"  "+ interestComponent +"  " );
+
+        }
+    }
+}
+
