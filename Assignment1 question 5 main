@@ -1,0 +1,23 @@
+package Q5Ass1;
+
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Repayment r = new Repayment();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter Loan Amount:");
+        r.setOpeningBalance(sc.nextDouble());
+        System.out.println("Enter Rate Of Interst");
+        r.setRoi(sc.nextDouble());
+        System.out.println("Enter No. of Payment in year:");
+        r.setNoOfPayment(sc.nextDouble());
+        System.out.println("Enter Tenure of Loan:");
+        r.setTenure(sc.nextDouble());
+        sc.close();
+
+        r.repaymentPlan();
+    }
+
+}
